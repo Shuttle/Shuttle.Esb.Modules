@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>shuttle-esb-modules</id>
+		<version>{semver}</version>
+		<authors>Eben Roux</authors>
+		<owners>Eben Roux</owners>
+		<licenseUrl>https://github.com/shuttle/shuttle-esb/raw/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/shuttle/shuttle-esb</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/Shuttle/shuttle-esb/master/media/logo/logo-core-small.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Contains common module extensions for  the Shuttle ESB.</description>
+		<releaseNotes/>
+		<copyright>Copyright (c) 2011-2014, Eben Roux</copyright>
+		<tags>shuttle-esb enterprise-service-bus esb messaging msmq rabbitmq service-bus soa</tags>
+		<dependencies>
+			<dependency id="shuttle-core-infrastructure" version="[{shuttle-core-infrastructure-version}]" />
+			<dependency id="shuttle-esb-core" version="[{shuttle-esb-core-version}]" />
+		</dependencies>
+	</metadata>
+</package>

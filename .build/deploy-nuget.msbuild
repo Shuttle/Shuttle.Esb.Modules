@@ -1,0 +1,46 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="PerformRelease" ToolsVersion="4.0">
+	<UsingTask AssemblyFile="..\packages\shuttle-core-msbuild.1.0.2\tools\net35-full\Shuttle.Core.MSBuild.dll" TaskName="Shuttle.Core.MSBuild.Prompt" />
+	<UsingTask AssemblyFile="..\packages\shuttle-core-msbuild.1.0.2\tools\net35-full\Shuttle.Core.MSBuild.dll" TaskName="Shuttle.Core.MSBuild.RegexFindAndReplace" />
+	
+	<PropertyGroup>
+		<DeploymentFolder>deployment</DeploymentFolder>
+	</PropertyGroup>
+
+	<Target Name="Deploy">
+		<Prompt Text="Enter semantic version:" Condition="$(SemanticVersion) == ''">
+			<Output TaskParameter="UserInput" PropertyName="SemanticVersion" />
+		</Prompt>
+
+		<MSBuild
+            Projects="$(MSBuildProjectFile)"
+            Targets="ApplyVersionNumbers"
+            Properties="SemanticVersion=$(SemanticVersion)"
+        />
+
+		<MSBuild Projects="build.msbuild" />
+
+		<ItemGroup>
+			<NugetBinaries Include="$(DeploymentFolder)\release\**\*.dll" />
+		</ItemGroup>
+
+		<Copy SourceFiles="shuttle-esb-modules.nuspec" DestinationFolder="$(DeploymentFolder)\nuget\shuttle-esb-modules" SkipUnchangedFiles="false" />
+		<Copy SourceFiles="@(NugetBinaries)" DestinationFolder="$(DeploymentFolder)\nuget\shuttle-esb-modules\lib\%(RecursiveDir)" SkipUnchangedFiles="false" />
+
+		<RegexFindAndReplace Files="$(DeploymentFolder)\nuget\shuttle-esb-modules\shuttle-esb-modules.nuspec" FindExpression="\{semver\}" ReplacementText="$(SemanticVersion)" />
+
+		<Exec Command="nuget pack shuttle-esb-modules.nuspec -NoPackageAnalysis" WorkingDirectory="$(DeploymentFolder)\nuget\shuttle-esb-modules" />
+		<Exec Command="nuget push $(DeploymentFolder)\nuget\shuttle-esb-modules\shuttle-esb-modules.$(SemanticVersion).nupkg" Condition="$(Operation) != 'pack-only'" />
+	</Target>
+
+	<Target Name="ApplyVersionNumbers">
+		<Error Text="Please enter a version number." Condition="$(SemanticVersion) == ''" />
+
+		<ItemGroup>
+			<AssemblyInfoFiles Include="..\**\*AssemblyInfo.cs" Exclude="..\*.Tests\**\*AssemblyInfo.cs"/>
+			<NugetFiles Include="..\**\*.nuspec"/>
+		</ItemGroup>
+
+		<RegexFindAndReplace Files="@(AssemblyInfoFiles)" FindExpression="AssemblyInformationalVersion\s*\(\s*&quot;.*&quot;\s*\)" ReplacementText="AssemblyInformationalVersion(&quot;$(SemanticVersion)&quot;)" />
+		<RegexFindAndReplace Files="@(AssemblyInfoFiles)" FindExpression="AssemblyVersion\s*\(\s*&quot;.*&quot;\s*\)" ReplacementText="AssemblyVersion(&quot;$(SemanticVersion).0&quot;)" />
+	</Target>
+</Project>
