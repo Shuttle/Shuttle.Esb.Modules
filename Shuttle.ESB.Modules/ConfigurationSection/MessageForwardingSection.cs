@@ -4,13 +4,8 @@ using Shuttle.ESB.Core;
 
 namespace Shuttle.ESB.Modules
 {
-    public class ModulesServiceBusSection : ConfigurationSection
+	public class MessageForwardingSection : ConfigurationSection
     {
-		public static ModulesServiceBusSection Open(string file)
-        {
-			return ShuttleConfigurationSection.Open<ModulesServiceBusSection>("serviceBus", file);
-        }
-
 		[ConfigurationProperty("forwardingRoutes", IsRequired = false, DefaultValue = null)]
 		public MessageRouteElementCollection ForwardingRoutes
         {

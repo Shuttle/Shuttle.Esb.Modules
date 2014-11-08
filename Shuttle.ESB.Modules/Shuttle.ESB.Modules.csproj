@@ -55,7 +55,7 @@
       <HintPath>..\packages\shuttle-core-infrastructure.3.1.4\lib\net35-full\Shuttle.Core.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Shuttle.ESB.Core">
-      <HintPath>..\packages\shuttle-esb-core.3.3.5\lib\net35-full\Shuttle.ESB.Core.dll</HintPath>
+      <HintPath>..\packages\shuttle-esb-core.3.3.7\lib\net35-full\Shuttle.ESB.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -68,7 +68,7 @@
     <Compile Include="ActiveTimeRange\ActiveTimeRangeModule.cs" />
     <Compile Include="ActiveTimeRange\ActiveTimeRangeObserver.cs" />
     <Compile Include="ActiveTimeRange\IActiveTimeRangeConfiguration.cs" />
-    <Compile Include="ConfigurationSection\ModulesServiceBusSection.cs" />
+    <Compile Include="ConfigurationSection\MessageForwardingSection.cs" />
     <Compile Include="CorruptTransportMessage\CorruptTransportMessageModule.cs" />
     <Compile Include="ESBModuleResources.Designer.cs">
       <AutoGen>True</AutoGen>

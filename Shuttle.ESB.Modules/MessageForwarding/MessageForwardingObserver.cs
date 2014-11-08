@@ -18,7 +18,7 @@ namespace Shuttle.ESB.Modules
 
 		internal void Initialize(IServiceBus bus)
 		{
-			var section = ShuttleConfigurationSection.Open<ModulesServiceBusSection>();
+			var section = ShuttleConfigurationSection.Open<MessageForwardingSection>();
 
 			if (section == null || section.ForwardingRoutes == null)
 			{

@@ -1,19 +1,18 @@
 using System;
 using NUnit.Framework;
 using Shuttle.ESB.Core;
-using Shuttle.ESB.Modules;
 
-namespace Shuttle.ESB.Tests
+namespace Shuttle.ESB.Modules.Tests
 {
     [TestFixture]
-    public class ForwardingRoutesServiceBusSection
+	public class MessageForwardingSectionTests
     {
         [Test]
 		[TestCase("ForwardingRoutes.config")]
 		[TestCase("ForwardingRoutes-Grouped.config")]
         public void Should_be_able_to_load_the_configuration(string file)
         {
-			var section = ShuttleConfigurationSection.Open<ServiceBusSection>("serviceBus", string.Format(@".\config-files\{0}", file));
+			var section = ShuttleConfigurationSection.Open<MessageForwardingSection>("messageForwarding", string.Format(@"config-files\{0}", file));
 
             Assert.IsNotNull(section);
             Assert.AreEqual(2, section.ForwardingRoutes.Count);
