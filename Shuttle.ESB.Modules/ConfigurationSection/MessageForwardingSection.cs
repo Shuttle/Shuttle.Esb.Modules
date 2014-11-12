@@ -11,10 +11,5 @@ namespace Shuttle.ESB.Modules
         {
 			get { return (MessageRouteElementCollection)this["forwardingRoutes"]; }
         }
-
-		protected override bool OnDeserializeUnrecognizedElement(string elementName, XmlReader reader)
-		{
-			return true;
-		}
 	}
 }
