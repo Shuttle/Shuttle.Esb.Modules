@@ -9,7 +9,7 @@ namespace Shuttle.ESB.Modules
 	{
 		private readonly IMessageRouteCollection messageRoutes = new MessageRouteCollection();
 
-		private ILog _log;
+		private readonly ILog _log;
 
 		public MessageForwardingObserver()
 		{
