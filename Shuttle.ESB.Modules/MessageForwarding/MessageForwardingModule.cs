@@ -8,7 +8,7 @@ namespace Shuttle.ESB.Modules
 	{
 		private readonly MessageForwardingObserver _observer = new MessageForwardingObserver();
 
-		private readonly string receiveMessagePipelineName = typeof(ReceiveMessagePipeline).FullName;
+		private readonly string inboxMessagePipelineName = typeof(InboxMessagePipeline).FullName;
 
 		public void Initialize(IServiceBus bus)
 		{
@@ -21,7 +21,7 @@ namespace Shuttle.ESB.Modules
 
 		private void PipelineCreated(object sender, PipelineEventArgs e)
 		{
-			if (!e.Pipeline.GetType().FullName.Equals(receiveMessagePipelineName, StringComparison.InvariantCultureIgnoreCase))
+			if (!e.Pipeline.GetType().FullName.Equals(inboxMessagePipelineName, StringComparison.InvariantCultureIgnoreCase))
 			{
 				return;
 			}
