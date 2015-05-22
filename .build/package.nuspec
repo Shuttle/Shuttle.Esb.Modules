@@ -9,7 +9,7 @@
 		<projectUrl>https://github.com/shuttle/shuttle-esb-modules</projectUrl>
 		<iconUrl>https://raw.githubusercontent.com/Shuttle/shuttle-esb-modules/master/.media/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Contains common module extensions for  the Shuttle ESB.</description>
+		<description>Contains common module extensions for the Shuttle ESB.</description>
 		<releaseNotes/>
 		<copyright>Copyright (c) 2011-{year}, Eben Roux</copyright>
 		<tags>shuttle-esb shuttle-esb-modules</tags>
