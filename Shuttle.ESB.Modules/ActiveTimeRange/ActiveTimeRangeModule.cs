@@ -6,8 +6,9 @@ namespace Shuttle.ESB.Modules
 {
 	public class ActiveTimeRangeModule : IModule, IDisposable, IThreadState
 	{
-		private volatile bool active;
-		private readonly string startupPipelineName = typeof(StartupPipeline).FullName;
+		private volatile bool _active;
+		private readonly string _startupPipelineName = typeof(StartupPipeline).FullName;
+		private readonly ActiveTimeRange _activeTimeRange = new ActiveTimeRangeConfiguration().CreateActiveTimeRange();
 
 		public void Initialize(IServiceBus bus)
 		{
@@ -18,22 +19,22 @@ namespace Shuttle.ESB.Modules
 
 		private void PipelineCreated(object sender, PipelineEventArgs e)
 		{
-			if (e.Pipeline.GetType().FullName.Equals(startupPipelineName, StringComparison.InvariantCultureIgnoreCase))
+			if (e.Pipeline.GetType().FullName.Equals(_startupPipelineName, StringComparison.InvariantCultureIgnoreCase))
 			{
 				return;
 			}
 
-			e.Pipeline.RegisterObserver(new ActiveTimeRangeObserver(this));
+			e.Pipeline.RegisterObserver(new ActiveTimeRangeObserver(this, _activeTimeRange));
 		}
 
 		public void Dispose()
 		{
-			active = false;
+			_active = false;
 		}
 
 		public bool Active
 		{
-			get { return active; }
+			get { return _active; }
 		}
 	}
 }
