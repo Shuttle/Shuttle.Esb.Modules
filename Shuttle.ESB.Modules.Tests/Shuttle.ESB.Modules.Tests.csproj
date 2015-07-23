@@ -41,18 +41,25 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\shuttle-core-infrastructure.3.1.5\lib\net35-full\Shuttle.Core.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Shuttle.ESB.Core, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\shuttle-esb-core.3.5.0\lib\net35-full\Shuttle.ESB.Core.dll</HintPath>
+    <Reference Include="Shuttle.ESB.Core, Version=3.6.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\shuttle-esb-core.3.6.4\lib\net35-full\Shuttle.ESB.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PurgeQueuesSectionTests.cs" />
     <Compile Include="MessageForwardingSectionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="config-files\PurgeQueues-Grouped.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="config-files\PurgeQueues.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="config-files\MessageForwarding-Grouped.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

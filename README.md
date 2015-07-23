@@ -14,11 +14,42 @@ The module will attach the `PurgeInboxObserver` to the `OnAfterInitializeQueueFa
 		.Start();
 ```
 
+### Purge Queues Module
+
+The module will attach the `PurgeQueuesObserver` to the `OnAfterInitializeQueueFactories` event of the `StartupPipeline` and purges the configured queues if the relevant queue implementation has implemented the `IPurgeQueue` interface.  If it hasn't a warning is logged.
+
+```xml
+<configuration>
+	<configSections>
+		<section name="purgeQueues" type="Shuttle.ESB.Modules.PurgeQueuesSection, Shuttle.ESB.Modules"/>
+	</configSections>
+
+	<purgeQueues>
+		<queues>
+			<queue uri="msmq://./inbox" />
+			<queue uri="sql://./inbox" />
+		</queues>
+	</purgeQueues>
+</configuration>
+```
+
+```c#
+	var bus = ServiceBus
+		.Create()
+		.AddModule(new PurgeQueuesModule())
+		.Start();
+```
+
 ### Message Forwarding Module
 
 The module will attach the `MessageForwardingObserver` to the `OnAfterHandleMessage` and then send the handled message on to any defined endpoints.
 
 ```xml
+<configuration>
+	<configSections>
+		<section name="messageForwarding" type="Shuttle.ESB.Modules.MessageForwardingSection, Shuttle.ESB.Modules"/>
+	</configSections>
+
 	<messageForwarding>
 		<forwardingRoutes>
 			<messageRoute uri="msmq://./inbox">
@@ -30,6 +61,7 @@ The module will attach the `MessageForwardingObserver` to the `OnAfterHandleMess
 			</messageRoute>
 		</forwardingRoutes>
 	</messageForwarding>
+</configuration>
 ```
 
 ```c#

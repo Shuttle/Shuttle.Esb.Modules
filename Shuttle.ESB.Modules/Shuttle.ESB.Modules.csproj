@@ -55,8 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\shuttle-core-infrastructure.3.1.5\lib\net35-full\Shuttle.Core.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Shuttle.ESB.Core, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\shuttle-esb-core.3.5.0\lib\net35-full\Shuttle.ESB.Core.dll</HintPath>
+    <Reference Include="Shuttle.ESB.Core, Version=3.6.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\shuttle-esb-core.3.6.4\lib\net35-full\Shuttle.ESB.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -70,7 +70,12 @@
     <Compile Include="ActiveTimeRange\ActiveTimeRangeModule.cs" />
     <Compile Include="ActiveTimeRange\ActiveTimeRangeObserver.cs" />
     <Compile Include="ActiveTimeRange\IActiveTimeRangeConfiguration.cs" />
-    <Compile Include="ConfigurationSection\MessageForwardingSection.cs" />
+    <Compile Include="MessageForwarding\MessageForwardingSection.cs" />
+    <Compile Include="PurgeQueues\PurgeQueueElement.cs" />
+    <Compile Include="PurgeQueues\PurgeQueueElementCollection.cs" />
+    <Compile Include="PurgeQueues\PurgeQueuesSection.cs" />
+    <Compile Include="PurgeInbox\PurgeInboxModule.cs" />
+    <Compile Include="PurgeInbox\PurgeInboxObserver.cs" />
     <Compile Include="CorruptTransportMessage\CorruptTransportMessageModule.cs" />
     <Compile Include="ESBModuleResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,8 +84,8 @@
     </Compile>
     <Compile Include="MessageForwarding\MessageForwardingModule.cs" />
     <Compile Include="MessageForwarding\MessageForwardingObserver.cs" />
-    <Compile Include="PurgeInbox\PurgeInboxModule.cs" />
-    <Compile Include="PurgeInbox\PurgeInboxObserver.cs" />
+    <Compile Include="PurgeQueues\PurgeQueuesModule.cs" />
+    <Compile Include="PurgeQueues\PurgeQueuesObserver.cs" />
     <Compile Include="SystemException\Events\HandlerExceptionEvent.cs" />
     <Compile Include="SystemException\Events\PipelineExceptionEvent.cs" />
     <Compile Include="SystemException\SystemExceptionModule.cs" />
