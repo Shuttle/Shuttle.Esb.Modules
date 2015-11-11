@@ -4,8 +4,7 @@ namespace Shuttle.ESB.Modules.Events
 {
 	public class HandlerExceptionEvent
 	{
-		public string HandlerTypeFullName { get; set; }
-		public Guid MessageId { get; set; }
+	    public Guid MessageId { get; set; }
 		public string MessageTypeFullName { get; set; }
 		public string WorkQueueUri { get; set; }
 		public string ErrorQueueUri { get; set; }

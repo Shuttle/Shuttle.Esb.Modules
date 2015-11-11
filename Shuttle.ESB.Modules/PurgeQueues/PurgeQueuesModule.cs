@@ -7,7 +7,7 @@ namespace Shuttle.ESB.Modules
 	{
 		private IServiceBus _bus;
 
-		private readonly string startupPipelineName = typeof(StartupPipeline).FullName;
+		private readonly string _startupPipelineName = typeof(StartupPipeline).FullName;
 
 		public void Initialize(IServiceBus bus)
 		{
@@ -18,7 +18,7 @@ namespace Shuttle.ESB.Modules
 
 		private void PipelineCreated(object sender, PipelineEventArgs e)
 		{
-			if (!e.Pipeline.GetType().FullName.Equals(startupPipelineName, StringComparison.InvariantCultureIgnoreCase))
+			if (!e.Pipeline.GetType().FullName.Equals(_startupPipelineName, StringComparison.InvariantCultureIgnoreCase))
 			{
 				return;
 			}

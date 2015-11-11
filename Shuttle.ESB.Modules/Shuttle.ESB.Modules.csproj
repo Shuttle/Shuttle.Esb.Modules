@@ -47,13 +47,13 @@
     <DefineConstants>$(DefineConstants);NET451FULL</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Shuttle.Core.Infrastructure, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\shuttle-core-infrastructure.3.2.0\lib\net40-full\Shuttle.Core.Infrastructure.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Shuttle.Core.Infrastructure, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\shuttle-core-infrastructure.3.3.1\lib\net40-full\Shuttle.Core.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Shuttle.ESB.Core, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\shuttle-esb-core.3.8.0\lib\net40-full\Shuttle.ESB.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Shuttle.ESB.Core, Version=4.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\shuttle-esb-core.4.0.2\lib\net40-full\Shuttle.ESB.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -66,6 +66,13 @@
     <Compile Include="ActiveTimeRange\ActiveTimeRangeModule.cs" />
     <Compile Include="ActiveTimeRange\ActiveTimeRangeObserver.cs" />
     <Compile Include="ActiveTimeRange\IActiveTimeRangeConfiguration.cs" />
+    <Compile Include="Logging\InboxLoggingObserver.cs" />
+    <Compile Include="Logging\LoggingModule.cs" />
+    <Compile Include="Logging\LoggingResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoggingResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="MessageForwarding\MessageForwardingSection.cs" />
     <Compile Include="PurgeQueues\PurgeQueueElement.cs" />
     <Compile Include="PurgeQueues\PurgeQueueElementCollection.cs" />
@@ -92,6 +99,12 @@
     <EmbeddedResource Include="ESBModuleResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ESBModuleResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logging\LoggingResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoggingResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Shuttle.ESB.Modules</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

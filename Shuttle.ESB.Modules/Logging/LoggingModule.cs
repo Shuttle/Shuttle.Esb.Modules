@@ -4,9 +4,9 @@ using Shuttle.ESB.Core;
 
 namespace Shuttle.ESB.Modules
 {
-	public class MessageForwardingModule : IModule
+	public class LoggingModule : IModule
 	{
-		private readonly MessageForwardingObserver _observer = new MessageForwardingObserver();
+		private readonly InboxLoggingObserver _inboxLoggingObserver = new InboxLoggingObserver();
 
 		private readonly string _inboxMessagePipelineName = typeof(InboxMessagePipeline).FullName;
 
@@ -15,8 +15,6 @@ namespace Shuttle.ESB.Modules
 			Guard.AgainstNull(bus, "bus");
 
 			bus.Events.PipelineCreated += PipelineCreated;
-
-			_observer.Initialize(bus);
 		}
 
 		private void PipelineCreated(object sender, PipelineEventArgs e)
@@ -26,7 +24,7 @@ namespace Shuttle.ESB.Modules
 				return;
 			}
 
-			e.Pipeline.RegisterObserver(_observer);
+			e.Pipeline.RegisterObserver(_inboxLoggingObserver);
 		}
 	}
 }

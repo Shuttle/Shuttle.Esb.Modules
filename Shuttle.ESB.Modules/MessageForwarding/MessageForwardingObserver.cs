@@ -7,7 +7,7 @@ namespace Shuttle.ESB.Modules
 {
 	public class MessageForwardingObserver : IPipelineObserver<OnAfterHandleMessage>
 	{
-		private readonly IMessageRouteCollection messageRoutes = new MessageRouteCollection();
+		private readonly IMessageRouteCollection _messageRoutes = new MessageRouteCollection();
 
 		private readonly ILog _log;
 
@@ -29,13 +29,13 @@ namespace Shuttle.ESB.Modules
 
 			foreach (MessageRouteElement mapElement in section.ForwardingRoutes)
 			{
-				var map = messageRoutes.Find(mapElement.Uri);
+				var map = _messageRoutes.Find(mapElement.Uri);
 
 				if (map == null)
 				{
 					map = new MessageRoute(bus.Configuration.QueueManager.GetQueue(mapElement.Uri));
 
-					messageRoutes.Add(map);
+					_messageRoutes.Add(map);
 				}
 
 				foreach (SpecificationElement specificationElement in mapElement)
@@ -56,7 +56,7 @@ namespace Shuttle.ESB.Modules
 			Guard.AgainstNull(transportMessage, "transportMessage");
 			Guard.AgainstNull(handlerContext, "handlerContext");
 
-			foreach (var uri in messageRoutes.FindAll(message.GetType().FullName).Select(messageRoute => messageRoute.Queue.Uri.ToString()).ToList())
+			foreach (var uri in _messageRoutes.FindAll(message.GetType().FullName).Select(messageRoute => messageRoute.Queue.Uri.ToString()).ToList())
 			{
 				var recipientUri = uri;
 
