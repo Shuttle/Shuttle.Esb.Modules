@@ -11,7 +11,7 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Contains common module extensions for the Shuttle ESB.</description>
 		<releaseNotes/>
-		<copyright>Copyright (c) 2011-{year}, Eben Roux</copyright>
+		<copyright>Copyright (c) {year}, Eben Roux</copyright>
 		<tags>shuttle-esb shuttle-esb-modules</tags>
 		<dependencies>
 			<dependency id="shuttle-core-infrastructure" version="{shuttle-core-infrastructure-version}" />

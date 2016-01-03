@@ -14,7 +14,7 @@ namespace Shuttle.ESB.Modules
 
 		public void Execute(OnAfterInitializeQueueFactories pipelineEvent)
 		{
-			var section = ShuttleConfigurationSection.Open<PurgeQueuesSection>("purgeQueues");
+			var section = ConfigurationSectionProvider.Open<PurgeQueuesSection>("shuttle", "purgeQueues");
 
 			if (section == null || section.Queues == null)
 			{
