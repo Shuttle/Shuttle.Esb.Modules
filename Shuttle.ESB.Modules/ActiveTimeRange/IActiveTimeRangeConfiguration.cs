@@ -1,4 +1,4 @@
-namespace Shuttle.ESB.Modules
+namespace Shuttle.Esb.Modules
 {
 	public interface IActiveTimeRangeConfiguration
 	{

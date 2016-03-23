@@ -1,6 +1,6 @@
 using System.Configuration;
 
-namespace Shuttle.ESB.Modules
+namespace Shuttle.Esb.Modules
 {
 	[ConfigurationCollection(typeof(PurgeQueueElement), AddItemName = "queue", CollectionType = ConfigurationElementCollectionType.BasicMap)]
     public class PurgeQueueElementCollection : ConfigurationElementCollection

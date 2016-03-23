@@ -1,6 +1,6 @@
 ﻿using Shuttle.Core.Infrastructure;
 
-namespace Shuttle.ESB.Modules
+namespace Shuttle.Esb.Modules
 {
 	public class ActiveTimeRangeConfiguration : IActiveTimeRangeConfiguration
 	{

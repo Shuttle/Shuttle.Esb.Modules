@@ -1,8 +1,8 @@
 using System.Configuration;
 using System.Xml;
-using Shuttle.ESB.Core;
+using Shuttle.Esb;
 
-namespace Shuttle.ESB.Modules
+namespace Shuttle.Esb.Modules
 {
 	public class MessageForwardingSection : ConfigurationSection
     {

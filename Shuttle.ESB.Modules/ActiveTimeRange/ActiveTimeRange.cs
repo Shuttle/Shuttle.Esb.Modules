@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Xml.Serialization;
 using Shuttle.Core.Infrastructure;
 
-namespace Shuttle.ESB.Modules
+namespace Shuttle.Esb.Modules
 {
 	[XmlType("ActiveTimeRange")]
 	public class ActiveTimeRange

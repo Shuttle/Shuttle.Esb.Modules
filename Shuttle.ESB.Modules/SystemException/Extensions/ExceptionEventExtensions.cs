@@ -1,8 +1,8 @@
 using System;
 using Shuttle.Core.Infrastructure;
-using Shuttle.ESB.Modules.Events;
+using Shuttle.Esb.Modules.Events;
 
-namespace Shuttle.ESB.Modules.Extensions
+namespace Shuttle.Esb.Modules.Extensions
 {
     public static class ExceptionEventExtensions
     {

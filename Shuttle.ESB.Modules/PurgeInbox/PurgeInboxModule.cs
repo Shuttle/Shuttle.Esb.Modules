@@ -1,7 +1,7 @@
 ﻿using System;
-using Shuttle.ESB.Core;
+using Shuttle.Esb;
 
-namespace Shuttle.ESB.Modules
+namespace Shuttle.Esb.Modules
 {
 	public class PurgeInboxModule : IModule
 	{

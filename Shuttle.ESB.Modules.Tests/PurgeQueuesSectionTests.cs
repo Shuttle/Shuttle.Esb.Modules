@@ -3,7 +3,7 @@ using System.IO;
 using NUnit.Framework;
 using Shuttle.Core.Infrastructure;
 
-namespace Shuttle.ESB.Modules.Tests
+namespace Shuttle.Esb.Modules.Tests
 {
     [TestFixture]
     public class PurgeQueuesSectionTests

@@ -1,6 +1,6 @@
 using System.Configuration;
 
-namespace Shuttle.ESB.Modules
+namespace Shuttle.Esb.Modules
 {
 	public class PurgeQueuesSection : ConfigurationSection
 	{

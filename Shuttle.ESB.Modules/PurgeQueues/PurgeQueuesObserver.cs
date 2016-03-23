@@ -1,7 +1,7 @@
 ﻿using Shuttle.Core.Infrastructure;
-using Shuttle.ESB.Core;
+using Shuttle.Esb;
 
-namespace Shuttle.ESB.Modules
+namespace Shuttle.Esb.Modules
 {
 	public class PurgeQueuesObserver : IPipelineObserver<OnAfterInitializeQueueFactories>
 	{

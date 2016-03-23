@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Shuttle.ESB.Modules {
+namespace Shuttle.Esb.Modules {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Shuttle.ESB.Modules {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Shuttle.ESB.Modules.Logging.LoggingResources", typeof(LoggingResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Shuttle.Esb.Modules.Logging.LoggingResources", typeof(LoggingResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

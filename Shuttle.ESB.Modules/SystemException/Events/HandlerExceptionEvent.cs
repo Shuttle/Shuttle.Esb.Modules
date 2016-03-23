@@ -1,6 +1,6 @@
 using System;
 
-namespace Shuttle.ESB.Modules.Events
+namespace Shuttle.Esb.Modules.Events
 {
 	public class HandlerExceptionEvent
 	{

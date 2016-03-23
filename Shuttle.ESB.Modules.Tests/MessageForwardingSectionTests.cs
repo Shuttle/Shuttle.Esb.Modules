@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using NUnit.Framework;
 using Shuttle.Core.Infrastructure;
-using Shuttle.ESB.Core;
+using Shuttle.Esb;
 
-namespace Shuttle.ESB.Modules.Tests
+namespace Shuttle.Esb.Modules.Tests
 {
     [TestFixture]
     public class MessageForwardingSectionTests
