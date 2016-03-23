@@ -4,12 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2844E037-3E0F-465D-8D02-026F354B2E23}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuttle.ESB.Modules", "Shuttle.ESB.Modules\Shuttle.ESB.Modules.csproj", "{B0B00292-E9FB-49C9-84FB-ACFF9725B08D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuttle.Esb.Modules", "Shuttle.Esb.Modules\Shuttle.Esb.Modules.csproj", "{B0B00292-E9FB-49C9-84FB-ACFF9725B08D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuttle.ESB.Modules.Tests", "Shuttle.ESB.Modules.Tests\Shuttle.ESB.Modules.Tests.csproj", "{FDA98510-EB40-46A7-8A77-1E6F2D984BDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuttle.Esb.Modules.Tests", "Shuttle.Esb.Modules.Tests\Shuttle.Esb.Modules.Tests.csproj", "{FDA98510-EB40-46A7-8A77-1E6F2D984BDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D245592D-E8AB-485A-8041-9DD8EF4F015E}"
 	ProjectSection(SolutionItems) = preProject
@@ -44,3 +43,4 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
+

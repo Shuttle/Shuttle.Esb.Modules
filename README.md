@@ -1,7 +1,7 @@
-shuttle-esb-modules
+Shuttle.Esb.Modules
 ===================
 
-This package will contain common modules that extend [shuttle-esb](https://github.com/Shuttle/shuttle-esb) functionality.
+This package will contain common modules that extend [Shuttle.Esb](http://shuttle.github.io/shuttle-esb/) functionality.
 
 ### Purge Inbox Module
 
@@ -9,8 +9,7 @@ The module will attach the `PurgeInboxObserver` to the `OnAfterInitializeQueueFa
 
 ```c#
 	var bus = ServiceBus
-		.Create()
-		.AddModule(new PurgeInboxModule())
+		.Create(c => c.AddModule(new PurgeInboxModule())
 		.Start();
 ```
 
@@ -21,7 +20,7 @@ The module will attach the `PurgeQueuesObserver` to the `OnAfterInitializeQueueF
 ```xml
 <configuration>
 	<configSections>
-		<section name="purgeQueues" type="Shuttle.ESB.Modules.PurgeQueuesSection, Shuttle.ESB.Modules"/>
+		<section name="purgeQueues" type="Shuttle.Esb.Modules.PurgeQueuesSection, Shuttle.Esb.Modules"/>
 	</configSections>
 
 	<purgeQueues>
@@ -35,8 +34,7 @@ The module will attach the `PurgeQueuesObserver` to the `OnAfterInitializeQueueF
 
 ```c#
 	var bus = ServiceBus
-		.Create()
-		.AddModule(new PurgeQueuesModule())
+		.Create(c => c.AddModule(new PurgeQueuesModule())
 		.Start();
 ```
 
@@ -47,7 +45,7 @@ The module will attach the `MessageForwardingObserver` to the `OnAfterHandleMess
 ```xml
 <configuration>
 	<configSections>
-		<section name="messageForwarding" type="Shuttle.ESB.Modules.MessageForwardingSection, Shuttle.ESB.Modules"/>
+		<section name="messageForwarding" type="Shuttle.Esb.Modules.MessageForwardingSection, Shuttle.Esb.Modules"/>
 	</configSections>
 
 	<messageForwarding>
@@ -66,8 +64,7 @@ The module will attach the `MessageForwardingObserver` to the `OnAfterHandleMess
 
 ```c#
 	var bus = ServiceBus
-		.Create()
-		.AddModule(new MessageForwardingModule())
+		.Create(c => c.AddModule(new MessageForwardingModule())
 		.Start();
 ```
 
@@ -86,8 +83,7 @@ The default value of `*` indicates the whole day and your pipelines will never b
 
 ```c#
 	var bus = ServiceBus
-		.Create()
-		.AddModule(new ActiveTimeRangeModule())
+		.Create(c => c.AddModule(new ActiveTimeRangeModule())
 		.Start();
 ```
 
@@ -103,8 +99,7 @@ It will log any transport messages that fail deserailization via the `ServiceBus
 
 ```c#
 	var bus = ServiceBus
-		.Create()
-		.AddModule(new CorruptTransportMessageModule())
+		.Create(c => c.AddModule(new CorruptTransportMessageModule())
 		.Start();
 ```
 
