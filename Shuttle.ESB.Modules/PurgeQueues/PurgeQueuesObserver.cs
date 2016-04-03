@@ -28,7 +28,7 @@ namespace Shuttle.Esb.Modules
 
 				if (purge == null)
 				{
-					_log.Warning(string.Format(ESBModuleResources.IPurgeQueueNotImplemented, queue.GetType().FullName));
+					_log.Warning(string.Format(EsbModuleResources.IPurgeQueueNotImplemented, queue.GetType().FullName));
 
 					continue;
 				}

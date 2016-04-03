@@ -50,7 +50,7 @@ namespace Shuttle.Esb.Modules
 
 				if (!DateTime.TryParseExact(value, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
 				{
-					throw new ArgumentException(string.Format(ESBModuleResources.InvalidActiveFromTime, value));
+					throw new ArgumentException(string.Format(EsbModuleResources.InvalidActiveFromTime, value));
 				}
 				else
 				{
@@ -85,7 +85,7 @@ namespace Shuttle.Esb.Modules
 
 				if (!DateTime.TryParseExact(value, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
 				{
-					throw new ArgumentException(string.Format(ESBModuleResources.InvalidActiveToTime, value));
+					throw new ArgumentException(string.Format(EsbModuleResources.InvalidActiveToTime, value));
 				}
 				else
 				{

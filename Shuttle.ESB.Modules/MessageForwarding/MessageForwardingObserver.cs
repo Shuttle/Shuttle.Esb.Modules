@@ -62,7 +62,7 @@ namespace Shuttle.Esb.Modules
 
 				if (_log.IsTraceEnabled)
 				{
-					_log.Trace(string.Format(ESBModuleResources.TraceForwarding, transportMessage.MessageType, transportMessage.MessageId, new Uri(recipientUri).Secured()));
+					_log.Trace(string.Format(EsbModuleResources.TraceForwarding, transportMessage.MessageType, transportMessage.MessageId, new Uri(recipientUri).Secured()));
 				}
 
 				handlerContext.Send(message, c => c.WithRecipient(recipientUri));

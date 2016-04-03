@@ -62,8 +62,8 @@
       <HintPath>..\packages\Shuttle.Core.Infrastructure.4.1.11\lib\net40-full\Shuttle.Core.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Shuttle.Esb, Version=5.1.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Shuttle.Esb.5.1.6\lib\net40-full\Shuttle.Esb.dll</HintPath>
+    <Reference Include="Shuttle.Esb, Version=5.1.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Shuttle.Esb.5.1.9\lib\net40-full\Shuttle.Esb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -91,10 +91,10 @@
     <Compile Include="PurgeInbox\PurgeInboxModule.cs" />
     <Compile Include="PurgeInbox\PurgeInboxObserver.cs" />
     <Compile Include="CorruptTransportMessage\CorruptTransportMessageModule.cs" />
-    <Compile Include="ESBModuleResources.Designer.cs">
+    <Compile Include="EsbModuleResources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ESBModuleResources.resx</DependentUpon>
+      <DependentUpon>EsbModuleResources.resx</DependentUpon>
     </Compile>
     <Compile Include="MessageForwarding\MessageForwardingModule.cs" />
     <Compile Include="MessageForwarding\MessageForwardingObserver.cs" />
@@ -107,9 +107,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ESBModuleResources.resx">
+    <EmbeddedResource Include="EsbModuleResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ESBModuleResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>EsbModuleResources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Logging\LoggingResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

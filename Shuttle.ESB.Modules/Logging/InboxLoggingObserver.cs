@@ -107,7 +107,7 @@ namespace Shuttle.Esb.Modules
                 ? _bus.Configuration.QueueManager.GetQueue(transportMessage.RecipientInboxWorkQueueUri)
                 : _bus.Configuration.Outbox.WorkQueue;
 
-            _log.Trace(string.Format(ESBResources.TraceMessageEnqueued,
+            _log.Trace(string.Format(EsbResources.TraceMessageEnqueued,
                 transportMessage.MessageType,
                 transportMessage.MessageId,
                 queue.Uri));
