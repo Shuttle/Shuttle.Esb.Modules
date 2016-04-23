@@ -1,5 +1,4 @@
 ﻿using System;
-using Shuttle.Esb;
 
 namespace Shuttle.Esb.Modules
 {
@@ -7,7 +6,7 @@ namespace Shuttle.Esb.Modules
 	{
 		private IServiceBus _bus;
 
-		private readonly string _startupPipelineName = typeof(StartupPipeline).FullName;
+		private readonly string _startupPipelineName = typeof (StartupPipeline).FullName;
 
 		public void Initialize(IServiceBus bus)
 		{

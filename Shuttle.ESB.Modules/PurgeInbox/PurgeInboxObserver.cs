@@ -1,5 +1,4 @@
 ﻿using Shuttle.Core.Infrastructure;
-using Shuttle.Esb;
 
 namespace Shuttle.Esb.Modules
 {
@@ -18,7 +17,8 @@ namespace Shuttle.Esb.Modules
 
 			if (purge == null)
 			{
-				_log.Warning(string.Format(EsbModuleResources.IPurgeQueueNotImplemented, pipelineEvent.Pipeline.State.GetServiceBus().Configuration.Inbox.WorkQueue.GetType().FullName));
+				_log.Warning(string.Format(EsbModuleResources.IPurgeQueueNotImplemented,
+					pipelineEvent.Pipeline.State.GetServiceBus().Configuration.Inbox.WorkQueue.GetType().FullName));
 
 				return;
 			}

@@ -29,4 +29,3 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("Shuttle.Esb")]
 [assembly: AssemblyCompany("Shuttle")]
 [assembly: ComVisible(false)]
-

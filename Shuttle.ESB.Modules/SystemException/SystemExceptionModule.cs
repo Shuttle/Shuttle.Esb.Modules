@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Net;
 using Shuttle.Core.Infrastructure;
-using Shuttle.Esb;
 using Shuttle.Esb.Modules.Extensions;
 
 namespace Shuttle.Esb.Modules
@@ -19,7 +18,7 @@ namespace Shuttle.Esb.Modules
 
 		public void Initialize(IServiceBus bus)
 		{
-		    Guard.AgainstNull(bus, "bus");
+			Guard.AgainstNull(bus, "bus");
 
 			_bus = bus;
 
@@ -38,7 +37,7 @@ namespace Shuttle.Esb.Modules
 			@event.PipelineStageName = e.Pipeline.StageName;
 			@event.PipelineEventTypeFullName = e.Pipeline.Event.GetType().FullName;
 
-			lock(Padlock)
+			lock (Padlock)
 			{
 				foreach (var deferredEvent in _deferredEvents)
 				{
@@ -55,7 +54,7 @@ namespace Shuttle.Esb.Modules
 		{
 			var @event = ExceptionEventExtensions.CoreHandlerExceptionEvent(e.Exception, _hostName, _ipAddresses);
 
-		    @event.MessageId = e.TransportMessage.MessageId;
+			@event.MessageId = e.TransportMessage.MessageId;
 			@event.MessageTypeFullName = e.TransportMessage.MessageType;
 			@event.WorkQueueUri = e.WorkQueue != null ? e.WorkQueue.Uri.ToString() : string.Empty;
 			@event.ErrorQueueUri = e.ErrorQueue != null ? e.ErrorQueue.Uri.ToString() : string.Empty;
@@ -64,7 +63,7 @@ namespace Shuttle.Esb.Modules
 
 			// cannot publish here since handler is wrapped in a transaction scope
 			// will always also result in pipeline exception so publish there
-			lock(Padlock)
+			lock (Padlock)
 			{
 				_deferredEvents.Add(@event);
 			}

@@ -2,7 +2,7 @@ using System;
 
 namespace Shuttle.Esb.Modules.Events
 {
-	public class PipelineExceptionEvent 
+	public class PipelineExceptionEvent
 	{
 		public string PipelineTypeFullName { get; set; }
 		public string PipelineStageName { get; set; }

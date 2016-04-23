@@ -1,13 +1,12 @@
 ﻿using System;
 using Shuttle.Core.Infrastructure;
-using Shuttle.Esb;
 
 namespace Shuttle.Esb.Modules
 {
 	public class ActiveTimeRangeModule : IModule, IDisposable, IThreadState
 	{
 		private volatile bool _active;
-		private readonly string _startupPipelineName = typeof(StartupPipeline).FullName;
+		private readonly string _startupPipelineName = typeof (StartupPipeline).FullName;
 		private readonly ActiveTimeRange _activeTimeRange = new ActiveTimeRangeConfiguration().CreateActiveTimeRange();
 
 		public void Initialize(IServiceBus bus)

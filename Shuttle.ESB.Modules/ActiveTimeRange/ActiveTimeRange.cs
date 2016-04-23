@@ -1,7 +1,6 @@
 using System;
 using System.Globalization;
 using System.Xml.Serialization;
-using Shuttle.Core.Infrastructure;
 
 namespace Shuttle.Esb.Modules
 {
@@ -109,7 +108,7 @@ namespace Shuttle.Esb.Modules
 					date >= date.Date.AddHours(activeFromHour).AddMinutes(activeFromMinute)
 					&&
 					date <= date.Date.AddHours(activeToHour).AddMinutes(activeToMinute)
-				);
+					);
 		}
 	}
 }

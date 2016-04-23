@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Shuttle.Core.Infrastructure;
-using Shuttle.Esb;
 
 namespace Shuttle.Esb.Modules
 {
@@ -56,13 +55,18 @@ namespace Shuttle.Esb.Modules
 			Guard.AgainstNull(transportMessage, "transportMessage");
 			Guard.AgainstNull(handlerContext, "handlerContext");
 
-			foreach (var uri in _messageRoutes.FindAll(message.GetType().FullName).Select(messageRoute => messageRoute.Queue.Uri.ToString()).ToList())
+			foreach (
+				var uri in
+					_messageRoutes.FindAll(message.GetType().FullName)
+						.Select(messageRoute => messageRoute.Queue.Uri.ToString())
+						.ToList())
 			{
 				var recipientUri = uri;
 
 				if (_log.IsTraceEnabled)
 				{
-					_log.Trace(string.Format(EsbModuleResources.TraceForwarding, transportMessage.MessageType, transportMessage.MessageId, new Uri(recipientUri).Secured()));
+					_log.Trace(string.Format(EsbModuleResources.TraceForwarding, transportMessage.MessageType,
+						transportMessage.MessageId, new Uri(recipientUri).Secured()));
 				}
 
 				handlerContext.Send(message, c => c.WithRecipient(recipientUri));

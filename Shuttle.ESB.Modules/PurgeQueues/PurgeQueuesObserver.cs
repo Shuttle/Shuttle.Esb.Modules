@@ -1,5 +1,4 @@
 ﻿using Shuttle.Core.Infrastructure;
-using Shuttle.Esb;
 
 namespace Shuttle.Esb.Modules
 {

@@ -1,6 +1,5 @@
 ﻿using System;
 using Shuttle.Core.Infrastructure;
-using Shuttle.Esb;
 
 namespace Shuttle.Esb.Modules
 {
@@ -8,7 +7,7 @@ namespace Shuttle.Esb.Modules
 	{
 		private readonly MessageForwardingObserver _observer = new MessageForwardingObserver();
 
-		private readonly string _inboxMessagePipelineName = typeof(InboxMessagePipeline).FullName;
+		private readonly string _inboxMessagePipelineName = typeof (InboxMessagePipeline).FullName;
 
 		public void Initialize(IServiceBus bus)
 		{

@@ -26,10 +26,10 @@ namespace Shuttle.Esb.Modules
 		public ActiveTimeRange CreateActiveTimeRange()
 		{
 			return new ActiveTimeRange
-				{
-					ActiveFromTime = ActiveFromTime,
-					ActiveToTime = ActiveToTime
-				};
+			{
+				ActiveFromTime = ActiveFromTime,
+				ActiveToTime = ActiveToTime
+			};
 		}
 	}
 }
