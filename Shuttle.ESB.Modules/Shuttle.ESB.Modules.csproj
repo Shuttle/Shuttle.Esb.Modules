@@ -62,8 +62,8 @@
       <HintPath>..\packages\Shuttle.Core.Infrastructure.4.2.0\lib\net40-full\Shuttle.Core.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Shuttle.Esb, Version=6.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Shuttle.Esb.6.1.1\lib\net40-full\Shuttle.Esb.dll</HintPath>
+    <Reference Include="Shuttle.Esb, Version=6.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Shuttle.Esb.6.1.3\lib\net40-full\Shuttle.Esb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -77,6 +77,11 @@
     <Compile Include="ActiveTimeRange\ActiveTimeRangeModule.cs" />
     <Compile Include="ActiveTimeRange\ActiveTimeRangeObserver.cs" />
     <Compile Include="ActiveTimeRange\IActiveTimeRangeConfiguration.cs" />
+    <Compile Include="EsbModuleResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EsbModuleResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Logging\InboxLoggingObserver.cs" />
     <Compile Include="Logging\LoggingModule.cs" />
     <Compile Include="Logging\LoggingResources.Designer.cs">
@@ -91,11 +96,6 @@
     <Compile Include="PurgeInbox\PurgeInboxModule.cs" />
     <Compile Include="PurgeInbox\PurgeInboxObserver.cs" />
     <Compile Include="CorruptTransportMessage\CorruptTransportMessageModule.cs" />
-    <Compile Include="EsbModuleResources1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EsbModuleResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="MessageForwarding\MessageForwardingModule.cs" />
     <Compile Include="MessageForwarding\MessageForwardingObserver.cs" />
     <Compile Include="PurgeQueues\PurgeQueuesModule.cs" />
@@ -109,7 +109,7 @@
   <ItemGroup>
     <EmbeddedResource Include="EsbModuleResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EsbModuleResources1.Designer.cs</LastGenOutput>
+      <LastGenOutput>EsbModuleResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Logging\LoggingResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
