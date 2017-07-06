@@ -1,6 +1,8 @@
 Shuttle.Esb.Modules
 ===================
 
+*** NOTE ***: This package has been deprecated.  Please use the individual module packages.
+
 This repository is now obsolete from v8.0.0 of Shuttle.Esb and has been superceded by the individual module repositories/packages:
 
 - [ActiveTimeRange](https://github.com/Shuttle/Shuttle.Esb.Module.ActiveTimeRange)
